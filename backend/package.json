@@ -32,5 +32,13 @@
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
+  },
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "target": "ES6",
+    "module": "CommonJS",
+    "strict": true
   }
 }
