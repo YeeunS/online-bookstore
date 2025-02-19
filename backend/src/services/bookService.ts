@@ -5,7 +5,9 @@ export const getAllBooks = async (
   author?: string,
   page: number = 1
 ) => {
-  return prisma.book.findMany({
+  console.log("Fetching books with filters:", { title, author, page });
+
+  const books = await prisma.book.findMany({
     where: {
       AND: [
         title ? { title: { contains: title } } : {},
@@ -15,6 +17,9 @@ export const getAllBooks = async (
     skip: (page - 1) * 10,
     take: 10,
   });
+
+  console.log("Books fetched:", books);
+  return books;
 };
 
 export const getBookById = async (id: number) => {
