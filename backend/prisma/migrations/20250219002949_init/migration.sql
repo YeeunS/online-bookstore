@@ -3,5 +3,5 @@ CREATE TABLE "Book" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "title" TEXT NOT NULL,
     "author" TEXT NOT NULL,
-    "stock" INTEGER NOT NULL DEFAULT 1
+    "stock" INTEGER NOT NULL
 );

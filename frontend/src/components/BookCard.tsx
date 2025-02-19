@@ -11,7 +11,7 @@ export default function BookCard({ book }: { book: Book }) {
     <div className="book-card">
       <h2>{book.title}</h2>
       <p>✍️ {book.author}</p>
-      <Link href={`/books/${book.id}`}>🔍 상세 보기</Link>
+      <Link href={`/books/${book.id}`}>상세 보기</Link>
     </div>
   );
 }

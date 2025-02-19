@@ -14,7 +14,7 @@ export async function getBooks(
   return res.json();
 }
 
-export async function getBookById(id: number) {
+export async function getBookById(id: string | number) {
   const res = await fetch(`${API_URL}/api/books/${id}`);
   if (!res.ok) throw new Error("책 정보를 가져오지 못했습니다.");
   return res.json();
@@ -30,11 +30,12 @@ export async function createBook(book: {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(book),
   });
+  if (!res.ok) throw new Error("책 추가 실패");
   return res.json();
 }
 
 export async function updateBook(
-  id: number,
+  id: string | number,
   book: { title?: string; author?: string; stock?: number }
 ) {
   const res = await fetch(`${API_URL}/api/books/${id}`, {
@@ -42,11 +43,14 @@ export async function updateBook(
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(book),
   });
+  if (!res.ok) throw new Error("책 수정 실패");
   return res.json();
 }
 
-export async function deleteBook(id: number) {
-  return await fetch(`${API_URL}/api/books/${id}`, { method: "DELETE" });
+export async function deleteBook(id: string | number) {
+  const res = await fetch(`${API_URL}/api/books/${id}`, { method: "DELETE" });
+  if (!res.ok) throw new Error("책 삭제 실패");
+  return res.json();
 }
 
 export async function addBook(book: {
