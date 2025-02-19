@@ -1,5 +1,5 @@
 import prisma from "../prismaClient";
-
+import { Prisma } from "@prisma/client";
 export const getAllBooks = async (
   title?: string,
   author?: string,
@@ -8,10 +8,10 @@ export const getAllBooks = async (
   return prisma.book.findMany({
     where: {
       title: title
-        ? ({ contains: title, mode: "insensitive" } as any)
+        ? ({ contains: title, mode: "insensitive" } as Prisma.StringFilter)
         : undefined,
       author: author
-        ? ({ contains: author, mode: "insensitive" } as any)
+        ? ({ contains: author, mode: "insensitive" } as Prisma.StringFilter)
         : undefined,
     },
     skip: (page - 1) * 10,

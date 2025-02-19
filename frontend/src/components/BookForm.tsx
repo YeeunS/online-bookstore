@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addBook } from "@/lib/api";
+import { createBook } from "@/lib/api";
 import { useRouter } from "next/navigation";
 
 export default function BookForm() {
@@ -10,7 +10,7 @@ export default function BookForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await addBook({ title, author, stock });
+    await createBook({ title, author, stock });
     router.push("/books");
   };
 

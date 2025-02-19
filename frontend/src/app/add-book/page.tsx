@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { createBook } from "@/lib/api";
 import { useRouter } from "next/navigation";
-import { addBook } from "@/lib/api";
+import "@/styles/globals.css";
 
-export default function AddBook() {
+export default function AddBookPage() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [stock, setStock] = useState(1);
@@ -12,34 +13,38 @@ export default function AddBook() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    await addBook({ title, author, stock });
+    await createBook({ title, author, stock });
+    alert("책이 추가되었습니다.");
     router.push("/books");
   }
 
   return (
     <main>
-      <h1>📖 새 책 추가</h1>
+      <h1>📖 책 추가</h1>
       <form onSubmit={handleSubmit}>
         <input
+          type="text"
+          placeholder="책 제목"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="책 제목"
           required
         />
         <input
+          type="text"
+          placeholder="저자"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-          placeholder="저자"
           required
         />
         <input
           type="number"
+          placeholder="재고"
           value={stock}
           onChange={(e) => setStock(Number(e.target.value))}
-          min="1"
+          min={1}
           required
         />
-        <button type="submit">추가하기</button>
+        <button type="submit">추가</button>
       </form>
     </main>
   );

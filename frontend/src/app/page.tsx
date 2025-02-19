@@ -1,8 +1,9 @@
+import "@/styles/globals.css";
 export default function Home() {
   return (
     <main>
-      <h1>📚 온라인 서점</h1>
-      <p>책을 검색하고 관리하세요!</p>
+      <h1>📚 RGT's Online Bookstore</h1>
+      <p>Welcome to the store!</p>
     </main>
   );
 }
