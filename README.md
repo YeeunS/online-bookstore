@@ -36,7 +36,7 @@ npm install
 
 #### 3.3 환경 변수 설정
 
-`backend` 디렉토리에 `.env` 파일을 생성하고 다음을 추가하세요:
+`backend` 디렉토리에 `.env` 파일을 생성하고 다음을 추가해야 합니다:
 
 ```env
 DATABASE_URL="postgresql://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/<DATABASE_NAME>"
@@ -96,7 +96,7 @@ npm run dev
 
 #### 5.1 백엔드 배포
 
-1. [Render](https://render.com/) 또는 [Railway](https://railway.app/)를 사용하여 백엔드를 배포하세요.
+1. [Render](https://render.com/) 을 사용하여 백엔드를 배포되었습니다.
 2. 배포된 환경에서 `DATABASE_URL`이 올바르게 설정되었는지 확인하세요.
 3. 배포된 서버에서 마이그레이션을 적용하세요:
    ```sh
@@ -105,7 +105,7 @@ npm run dev
 
 #### 5.2 프론트엔드 배포
 
-1. [Vercel](https://vercel.com/) 또는 [Netlify](https://www.netlify.com/)를 사용하여 프론트엔드를 배포하세요.
+1. [Vercel](https://vercel.com/) 사용하여 프론트엔드를 배포되었습니다.
 2. `.env.local` 파일에 백엔드 API URL을 설정하세요:
    ```env
    NEXT_PUBLIC_API_URL="https://your-backend-url.com"
@@ -156,9 +156,16 @@ npx prisma migrate reset
 
 ---
 
-### 8. 👨‍💻 기여자
+### 8. URL Address
 
-- **Yeeun Shin** ([@your-github](https://github.com/YeeunS))
+- Backend: `https://online-bookstore-194l.onrender.com`
+- Frontend: `https://bookstore-iota-hazel.vercel.app`
+
+---
+
+### 9. 👨‍💻 기여자
+
+- **Yeeun Shin** ([@YeeunS](https://github.com/YeeunS))
 
 문제가 발생하면 [Issue](https://github.com/online-bookstore/issues)를 생성하거나 PR을 제출해주세요.
 
