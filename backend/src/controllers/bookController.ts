@@ -31,7 +31,7 @@ export const getBookById = async (
       res.status(404).json({ error: "Book not found" });
       return;
     }
-    res.json(book); // ✅ Response만 보내고 별도 return 없음
+    res.json(book);
   } catch (error) {
     res.status(500).json({ error: "Error fetching book" });
   }

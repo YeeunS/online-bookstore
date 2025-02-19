@@ -7,12 +7,10 @@ export const getAllBooks = async (
 ) => {
   return prisma.book.findMany({
     where: {
-      title: title
-        ? ({ contains: title, mode: "insensitive" } as Prisma.StringFilter)
-        : undefined,
-      author: author
-        ? ({ contains: author, mode: "insensitive" } as Prisma.StringFilter)
-        : undefined,
+      AND: [
+        title ? { title: { contains: title } } : {},
+        author ? { author: { contains: author } } : {},
+      ],
     },
     skip: (page - 1) * 10,
     take: 10,
