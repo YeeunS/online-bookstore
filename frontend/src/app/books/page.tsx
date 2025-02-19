@@ -61,14 +61,14 @@ export default function BooksPage() {
           placeholder="제목 검색"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          onKeyDown={handleKeyDown} // ⬅️ 엔터 입력 시 검색 실행
+          onKeyDown={handleKeyDown} 
         />
         <input
           type="text"
           placeholder="저자 검색"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-          onKeyDown={handleKeyDown} // ⬅️ 엔터 입력 시 검색 실행
+          onKeyDown={handleKeyDown} 
         />
         <div className="button-group">
           <button onClick={handleSearch}>검색</button>
