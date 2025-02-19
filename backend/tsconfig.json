@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "moduleResolution": "node",
     "target": "ES6",
     "module": "CommonJS",
-    "rootDir": "./",
-    "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true
-  }
+  },
+  "include": ["src", "prisma"]
 }
